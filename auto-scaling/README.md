@@ -55,7 +55,7 @@ Apply the Priority file: </br>
         kubectl apply -f priority.yaml
 
   
-To Test Auto-Scaling, run the command:
+To Test Auto-Scaling, run the command below in multiple tabs (e.g. 5 ) in the Query Editor: </br> 
 
 
         select sum(quantity) from tpch.sf100000.lineitem;
