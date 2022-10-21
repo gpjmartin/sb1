@@ -1,14 +1,26 @@
 Follow the instructions as per the Docs: </br>
 
     https://docs.starburst.io/starburst-enterprise/admin-topics/autoscaling.html
-  
-Customize the yaml to match the SEP Cluster : </br>
+
+Important: When the Cluster is created (e.g. EKS yaml), the following policy should be defined.</br>
+The value of $your_cluster_name_here needs to be the same in the Autoscaler need to match the SEP Cluster. </br>
+For EKS the related docs can be found below: </br>
+
+https://eksctl.io/usage/autoscaling/#enable-auto-scaling
+
+Sample EKS yaml: </br> 
+
+        iam:
+          withAddonPolicies:
+          autoScaler: true
+
+Customize the Auto-scaler yaml to match the SEP Cluster : </br>
 
     autoDiscovery:
-        clusterName: grm-lab01
+        clusterName: $your_cluster_name_here
         tags:
           - k8s.io/cluster-autoscaler/enabled
-          - k8s.io/cluster-autoscaler/your_cluster_name_here
+          - k8s.io/cluster-autoscaler/$your_cluster_name_here
 
     extraArgs:
       skip-nodes-with-local-storage: "false"
@@ -75,7 +87,7 @@ To Test Auto-Scaling, run the command below in multiple tabs (e.g. 5 ) in the Qu
 In the Starburst Insights UI, monitor the Worker Node(s) getting added to the Cluster. </br> 
 There is a lag in the new worker appearing in the UI. </br>
 
-The added pod(s) can also be seen being added in k8s (e.g. using k9s to monitor). 
+The auto-scaling new pod(s) can also be seen being added in k8s (e.g. using k9s to monitor). 
 
 
 
