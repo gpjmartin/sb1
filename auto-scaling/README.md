@@ -1,3 +1,5 @@
+Auto-Scaling Starburst on an EKS Cluster
+
 Follow the instructions as per the Docs: </br>
 
 https://docs.starburst.io/starburst-enterprise/admin-topics/autoscaling.html
