@@ -53,7 +53,19 @@ The Auto-Scale should have a higher priority than most other pods.
 Apply the Priority file: </br>
 
         kubectl apply -f priority.yaml
+        
+The Cluster yaml should have a Min/Max Replicas set (don't set the "replicas" explicitly). </br>
 
+        worker:
+          autoscaling:
+            enabled: true
+            minReplicas: 1
+            maxReplicas: 3
+            targetCPUUtilizationPercentage: 50 # Default is 80 but for demo and testing you can set this lower to something like 50.
+          # The deploymentTerminatinoGracePeriodSeconds controls how long the worker waits before beginning the graceful shutdown process.
+          # The following value was lowered for demo purposes 
+          deploymentTerminationGracePeriodSeconds: 10 # default is 300; it is actually how long the graceful shutdown waits after it receives the SIGTERM
+          starburstWorkerShutdownGracePeriodSeconds: 120 # default is 120
   
 To Test Auto-Scaling, run the command below in multiple tabs (e.g. 5 ) in the Query Editor: </br> 
 
