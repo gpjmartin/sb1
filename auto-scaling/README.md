@@ -4,17 +4,18 @@ Follow the instructions as per the Docs: </br>
 
 https://docs.starburst.io/starburst-enterprise/admin-topics/autoscaling.html
 
-Important: When the Cluster is created (e.g. EKS yaml), the following policy should be defined.</br>
-The value of $your_cluster_name_here needs to be the same in the Autoscaler need to match the SEP Cluster. </br>
-For EKS the related docs can be found below: </br>
-
-https://eksctl.io/usage/autoscaling/#enable-auto-scaling
+Important: When the Cluster is created (e.g. using EKS yaml), the following policy should be defined.</br>
 
 Sample EKS yaml: </br> 
 
         iam:
           withAddonPolicies:
           autoScaler: true
+          
+The value of $your_cluster_name_here in the Autoscaler yaml and needs to match the SEP Cluster name. </br>
+For EKS the related docs can be found below: </br>
+
+https://eksctl.io/usage/autoscaling/#enable-auto-scaling
 
 Customize the Auto-scaler yaml to match the SEP Cluster : </br>
 
