@@ -1,4 +1,4 @@
-Auto-Scaling Starburst on an EKS Cluster
+# Auto-Scaling Starburst on an EKS Cluster
 
 Follow the instructions as per the Docs: </br>
 
