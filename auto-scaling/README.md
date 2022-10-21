@@ -13,6 +13,7 @@ Sample EKS yaml: </br>
           autoScaler: true
           
 The value of $your_cluster_name_here in the Autoscaler yaml and needs to match the SEP Cluster name. </br>
+
 For EKS the related docs can be found below: </br>
 
 https://eksctl.io/usage/autoscaling/#enable-auto-scaling
