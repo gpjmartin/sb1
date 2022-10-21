@@ -1,6 +1,6 @@
 Follow the instructions as per the Docs: </br>
 
-    https://docs.starburst.io/starburst-enterprise/admin-topics/autoscaling.html
+https://docs.starburst.io/starburst-enterprise/admin-topics/autoscaling.html
 
 Important: When the Cluster is created (e.g. EKS yaml), the following policy should be defined.</br>
 The value of $your_cluster_name_here needs to be the same in the Autoscaler need to match the SEP Cluster. </br>
