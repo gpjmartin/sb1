@@ -60,6 +60,10 @@ To Test Auto-Scaling, run the command below in multiple tabs (e.g. 5 ) in the Qu
 
         select sum(quantity) from tpch.sf100000.lineitem;
 
+In the Starburst Insights UI, monitor the Worker Node(s) getting added to the Cluster. </br> 
+There is a lag in the new worker appearing in the UI. </br>
+
+The added pod(s) can also be seen being added in k8s (e.g. using k9s to monitor). 
 
 
 
